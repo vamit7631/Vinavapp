@@ -128,6 +128,5 @@ module.exports.generateExcel = async (reqData) => {
 }
 
 
-
-db.getCollection('rfxdetails').aggregate([{ $group: {_id:{rfqNo:"$rfqNo",companyCode:"$companyCode",rilSite:"$rilSite"
+db.getCollection('rfxdetails').aggregate([{$match:{rfqNo:918}},{ $group: {_id:{companyCode:"$companyCode",rilSite:"$rilSite"
     }, count:{$sum:1}} }])
